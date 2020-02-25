@@ -1,0 +1,11 @@
+-dce full
+-D analyzer-optimize
+-D react_runtime_warnings
+-D js-es=6
+-lib react
+
+--macro includeFile("vendor/imports.js", "top")
+-main App
+
+-js index.js
+
