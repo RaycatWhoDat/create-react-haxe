@@ -5,6 +5,8 @@ import react.ReactDOM;
 import react.ReactComponent;
 import react.ReactMacro.jsx;
 
+import AppTools;
+
 /**
  * This is the main entrypoint for the application.
  */
@@ -21,16 +23,7 @@ class App extends ReactComponent {
 
   override function render() {
     var logo = js.Lib.require("./assets/logo.svg");
-    return jsx('
-               <div className="App">
-               <header className="App-header">
-               <img src=$logo className="App-logo" alt="logo" />
-               <p>
-               Edit <code>src/App.hx</code> and save to reload.
-               </p>
-               </header>
-               </div>
-               ');
+    return AppTools.insertTemplate("App");
   }
 }
 

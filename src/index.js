@@ -16,10 +16,19 @@ class App extends React_Component {
 	}
 	static main() {
 		ReactDOM.render(React.createElement(App),window.document.getElementById("root"));
-		console.log("App.hx:19:","Application loaded.");
+		console.log("App.hx:21:","Application loaded.");
 	}
 }
 $hx_exports["App"] = App;
+class HxOverrides {
+	static iter(a) {
+		return { cur : 0, arr : a, hasNext : function() {
+			return this.cur < this.arr.length;
+		}, next : function() {
+			return this.arr[this.cur++];
+		}};
+	}
+}
 var React = require("react");
 var ReactDOM = require("react-dom");
 var $$tre = (typeof Symbol === "function" && Symbol.for && Symbol.for("react.element")) || 0xeac7;
